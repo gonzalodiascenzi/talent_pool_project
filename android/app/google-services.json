@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "263887664956",
+    "project_id": "talent-pool-project-45fb2",
+    "storage_bucket": "talent-pool-project-45fb2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:263887664956:android:0a6dab6a93b3219bdb5039",
+        "android_client_info": {
+          "package_name": "com.gonza.talent_pool_project"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "263887664956-b5mmmf93forllmt617olgfo7vo707qno.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBQTh0jUMV0lAaCVrlk5aSob2Yb_k6wtWM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "263887664956-b5mmmf93forllmt617olgfo7vo707qno.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
