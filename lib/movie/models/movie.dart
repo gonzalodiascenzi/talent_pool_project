@@ -1,4 +1,4 @@
-class Movie {
+/*class Movie {
   String backdropPath;
   String overview;
   String posterPath;
@@ -36,4 +36,4 @@ class Movie {
       'voteCount': voteCount,
     };
   }
-}
+}*/

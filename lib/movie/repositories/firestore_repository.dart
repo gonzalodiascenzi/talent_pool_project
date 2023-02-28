@@ -1,7 +1,9 @@
-
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:talent_pool_project/movie/models/movie.dart';
+import 'package:talent_pool_project/movie/models/movie_model.dart';
+import 'package:dartz/dartz.dart';
+import 'movie_repository.dart';
 
+//Single Responsability
 abstract class Repository<T> {
   Future<T?> get(String id);
   Future<void> set(String id, T data);
@@ -9,11 +11,41 @@ abstract class Repository<T> {
   Future<void> delete(String id);
 }
 
-class FirestoreRepository implements Repository<Movie> {
+class FirestoreRepository implements MovieRepository {
   final FirebaseFirestore _db = FirebaseFirestore.instance;
   final String _collectionName = 'movie';
 
   @override
+  Future<Either<String, List<MovieModel>>> getNowPlaying({int page = 1}) async {
+    try {
+      final querySnapshot = await _db.collection("getNowPlaying").get();
+
+      final movies = querySnapshot.docs
+          .map((doc) => MovieModel.fromMap(doc.data()))
+          .toList();
+
+      return Right(movies);
+    } catch (e) {
+      return Left(e.toString());
+    }
+  }
+
+  @override
+  Future<Either<String, List<MovieModel>>> getTopRated({int page = 1}) async {
+    try {
+      final querySnapshot = await _db.collection("getTopRated").get();
+
+      final movies = querySnapshot.docs
+          .map((doc) => MovieModel.fromMap(doc.data()))
+          .toList();
+
+      return Right(movies);
+    } catch (e) {
+      return Left(e.toString());
+    }
+  }
+
+/*  @override
   Future<Movie?> get(String id) async {
     final docSnapshot = await _db.collection(_collectionName).doc(id).get();
     if (docSnapshot.exists) {
@@ -54,5 +86,5 @@ class FirestoreRepository implements Repository<Movie> {
     } else {
       await docRef.delete();
     }
-  }
+  }*/
 }

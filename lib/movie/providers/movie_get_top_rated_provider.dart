@@ -34,7 +34,7 @@ class MovieGetTopRatedProvider with ChangeNotifier {
       },
       (response) {
         _movies.clear();
-        _movies.addAll(response.results);
+        _movies.addAll(response);
 
         _isLoading = false;
         notifyListeners();
@@ -59,10 +59,10 @@ class MovieGetTopRatedProvider with ChangeNotifier {
         return;
       },
       (response) {
-        if (response.results.length < 20) {
-          pagingController.appendLastPage(response.results);
+        if (response.length < 20) {
+          pagingController.appendLastPage(response);
         } else {
-          pagingController.appendPage(response.results, page + 1);
+          pagingController.appendPage(response, page + 1);
         }
         return;
       },
