@@ -6,7 +6,7 @@ import 'package:talent_pool_project/movie/pages/movie_page.dart';
 import 'package:talent_pool_project/movie/providers/movie_get_now_playing_provider.dart';
 import 'package:talent_pool_project/movie/providers/movie_get_top_rated_provider.dart';
 
-
+//Se utiliza ChangeNotifier para cumplir con el patron Provider
 void main() {
   WidgetsBinding widgetsBinding = WidgetsFlutterBinding.ensureInitialized();
   FlutterNativeSplash.preserve(widgetsBinding: widgetsBinding);

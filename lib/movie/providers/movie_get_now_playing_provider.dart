@@ -4,6 +4,8 @@ import 'package:infinite_scroll_pagination/infinite_scroll_pagination.dart';
 import '../models/movie_model.dart';
 import '../repositories/movie_repository.dart';
 
+//Se utiliza ChangeNotifier para cumplir con el patron Provider
+
 class MovieGetNowPlayingProvider with ChangeNotifier {
   final MovieRepository _movieRepository;
 
