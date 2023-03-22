@@ -78,12 +78,4 @@ class MovieRepositoryImpl implements MovieRepository {
     }
   }
 
-  @override
-  Future<Either<String, MovieResponseModel>> search({required String query}) {
-    // TODO: implement search
-    throw UnimplementedError();
-  }
-
-
-
 }
