@@ -77,5 +77,11 @@ class MovieRepositoryImpl implements MovieRepository {
       return const Left('Another error on get now playing movies');
     }
   }
+  
+  @override
+  Future<Either<String, MovieResponseModel>> search({required String query}) {
+    // TODO: implement search
+    throw UnimplementedError();
+  }
 
 }
